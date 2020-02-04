@@ -1,32 +1,15 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 
+const App = () => {
 
-//Functional component
-
-// const App = () => {
-
-//     window.navigator.geolocation.getCurrentPosition(
-//         position => console.log(position),
-//         err => console.log(err)
-//     );
-//     return(
-//         <div></div>
-//     )
-// }
-
-//Class Component
-
-class App extends React.Component{
-    render(){
-        window.navigator.geolocation.getCurrentPosition(
-                position => console.log(position),
-                err => console.log(err)
-            );
-            return(
-                <div>l</div>
-            )
-    }
+    window.navigator.geolocation.getCurrentPosition(
+        position => console.log(position),
+        err => console.log(err)
+    );
+    return(
+        <div></div>
+    )
 }
 
 ReactDOM.render(<App />, document.querySelector("#root"));
