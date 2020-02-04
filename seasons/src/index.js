@@ -33,12 +33,15 @@ class App extends React.Component{
 
     render(){
        
-            // console.log(this.state.lat);
-            return(                
-                <div>latitude: {this.state.lat}<br/>
-                error: {this.state.errorMessage}
-                </div>
-            )
+            // console.log(this.state.lat)              
+                if(this.state.errorMessage && !this.state.lat){
+                    return <div> Error: {this.state.errorMessage}</div>
+                }
+                if(!this.state.errorMessage && this.state.lat){
+                    return <div> Latitude: {this.state.lat}</div>
+                }
+                return <div>Loading...</div>
+            
     }
 }
 
