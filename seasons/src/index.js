@@ -30,6 +30,14 @@ class App extends React.Component{
             err => this.setState({errorMessage : err.message})
         );
     }
+    componentDidMount() {
+        console.log("component was rendered to the screen");
+    }
+
+    componentDidUpdate() {
+        console.log("component was updated -it rerendered");
+    }
+
 
     render(){
        
