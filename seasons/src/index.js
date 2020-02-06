@@ -39,16 +39,24 @@ class App extends React.Component{
     // }
 
 
+    renderContent(){
+        // console.log(this.state.lat)              
+        if(this.state.errorMessage && !this.state.lat){
+            return <div> Error: {this.state.errorMessage}</div>
+        }
+        if(!this.state.errorMessage && this.state.lat){
+            return <SeasonDisplay lat={this.state.lat} />
+        }
+        return <div><Spinner message="Please allow location" /></div>
+    }
+
     render(){
        
-            // console.log(this.state.lat)              
-                if(this.state.errorMessage && !this.state.lat){
-                    return <div> Error: {this.state.errorMessage}</div>
-                }
-                if(!this.state.errorMessage && this.state.lat){
-                    return <SeasonDisplay lat={this.state.lat} />
-                }
-                return <div><Spinner message="Please allow location" /></div>
+            return(
+            <div className="border red">{
+                this.renderContent()
+            }</div>
+            )
             
     }
 }
